@@ -1,0 +1,158 @@
+/* IBM Plex Serif */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* IBM Plex Sans */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* Material Icons */
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+
+:root {
+  --darkBackground: #141313;
+}
+
+.page {
+  font-family: 'IBM Plex Sans';
+  display: flex;
+  min-height: 100dvh;
+}
+
+.sidebar {
+  background-color: var(--darkBackground);
+  padding: 56px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 285px;
+  box-sizing: border-box;
+  color: white;
+  transition: all 0.3s ease;
+  left: 0;
+}
+
+.sidebar__button {
+  position: absolute;
+  top: 62px;
+  left: 24px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 0;
+  color: white;
+  display: none;
+}
+
+.sidebar__copyright,
+.sidebar__title,
+.hero__title {
+  margin: 0;
+}
+
+.sidebar__title {
+  margin-bottom: 181px;
+  font-family: 'IBM Plex Serif';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 39px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar__nav-links>.sidebar__link:hover {
+  font-weight: 900;
+  transform: scale(1.05);
+}
+
+.sidebar__nav-links {
+  gap: 20px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  text-transform: uppercase;
+}
+
+.sidebar__nav-social {
+  gap: 12px;
+  margin-bottom: 30px;
+  flex-direction: row;
+  transition: all 0.3s ease;
+}
+
+.sidebar__link {
+  color: white;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.sidebar__social {
+  background-color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.hero {
+  color: var(--darkBackground);
+  padding: 56px 48px;
+}
+
+.hero__header {
+  display: flex;
+  gap: 24px;
+}
+
+.hero__button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 0;
+  display: none;
+}
+
+/* 768px */
+@media screen and (width < 768px) {
+
+  .sidebar {
+    padding: 28px 24px;
+    max-width: 200px;
+  }
+
+  .hero {
+    padding: 28px 24px;
+  }
+
+  .sidebar__nav-social {
+    flex-direction: column;
+  }
+}
+
+
+/* 480px */
+@media screen and (width < 480px) {
+  .sidebar {
+    position: fixed;
+    height: 100dvh;
+    left: -100%;
+  }
+
+  .hero__button {
+    display: block;
+  }
+
+  .sidebar__button {
+    display: block;
+  }
+}
+
+
+/* 320px */
+
+.sidebar_open {
+  left: 0;
+}
