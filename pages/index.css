@@ -10,6 +10,7 @@
 
 :root {
   --darkBackground: #141313;
+  --borderBackground: rgba(20, 19, 19, 0.1);
 }
 
 .page {
@@ -90,23 +91,33 @@
   transition: all 0.2s ease;
 }
 
-.sidebar__social {
+.nav__social {
   background-color: white;
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--darkBackground);
+}
+
+.nav__social_secondary {
+  border: 1px solid var(--borderBackground);
 }
 
 .hero {
   color: var(--darkBackground);
   padding: 56px 48px;
+  display: grid;
+  grid-template-columns: max-content 1fr 150px;
+  width: 100%;
 }
 
 .hero__header {
-  display: flex;
-  gap: 24px;
-  flex-direction: column;
-  width: 597px;
+  width: 100%;
+  max-width: 597px;
+  place-self: center;
 }
 
 .hero__button {
@@ -117,7 +128,7 @@
   display: none;
 }
 
-.hero__title{
+.hero__title {
   width: 545px;
   height: 270px;
   font-family: 'IBM Plex Sans';
@@ -127,6 +138,17 @@
   line-height: 90px;
   text-transform: uppercase;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.hero__image {
+  width: 100%;
+  max-width: 660px;
+  place-self: center;
+}
+
+.hero__nav-social {
+  gap: 20px;
+  place-self: center right;
 }
 
 /* 768px */
@@ -169,4 +191,17 @@
 
 .sidebar_open {
   left: 0;
+}
+
+
+.sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
